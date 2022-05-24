@@ -14,10 +14,19 @@
     </properties>
 
     <dependencies>
+        <!-- Airport Simulation import-->
         <dependency>
             <groupId>dhbw.sose2022.softwareengineering</groupId>
             <artifactId>airportargentsim</artifactId>
             <version>0.0.1</version>
+        </dependency>
+
+        <!-- Lombok für Setter und Getter-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
