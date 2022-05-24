@@ -1,0 +1,6 @@
+id: 5
+name: objekte
+authors: Steven,Dario,Moritz,David,Niclas,Luka,Yannic,Hendrik
+entrypoint: full qualified main class of plugin
+dependencies: list of plugin used
+
