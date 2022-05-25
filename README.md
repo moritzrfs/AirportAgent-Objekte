@@ -1,10 +1,13 @@
 # AirportAgent-Objekte <!-- omit in toc -->
-Dies ist das Repo der Objekt-Gruppe des Airport Simulation Projekts :airplane: .
+Dies ist das Repo der Objekt-Gruppe des Airport Simulation Projekts :airplane: 
 
+---
 # Inhaltsverzeichnis <!-- omit in toc -->
 - [Projekt-Oragnisation](#projekt-oragnisation)
   - [Rolleneinteilung](#rolleneinteilung)
 - [Software Dokumentation](#software-dokumentation)
+  - [Architekturmuster](#architekturmuster)
+  - [Strukturentwurfsmuster](#strukturentwurfsmuster)
 
 ---
 # Projekt-Oragnisation
@@ -34,3 +37,9 @@ Aufgrund der [User Stories](https://airportagent-objekte.atlassian.net/jira/soft
 2. Ticketschalter
 3. Sicherheitsschleuse
 4. Gepächabgabe
+
+## Architekturmuster
+Die Simulationsumgebung an sich verwendet die Plug-In Architektur.
+![](./img/PlugInArchitecture.png)
+Demnach stellt die Simulationsgruppe die Schnittstelle `dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin` zur Verfügung die von uns implementiert wurde, sodass unser `ObjectPlugin` in das Gesamtsystem implementiert werden kann. 
+## Strukturentwurfsmuster
