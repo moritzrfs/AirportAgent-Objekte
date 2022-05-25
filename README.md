@@ -39,18 +39,22 @@ Das gesamte Product-Backlog mit den dazugehörigen Epics, User-Stories und Sprin
 # Software Dokumentation
 Unsere Lösung basiert auf einem Java Projekt welches als Plugin in der Architektur der [Simulations-Gruppe](https://github.com/Vincent200355/AirportAgentSimulation-Base) ausgeführt werden kann. Das entsprechende Plugin implementiert demnach die benötigte Schnittstelle `dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin`. <br>
 Aufgrund der [User Stories](https://airportagent-objekte.atlassian.net/jira/software/projects/AO/boards/1) wurden folgende Objekte implementiert:  
-1. Wände
+1. **Wände**
    - für Agenten undurchlässig
    - unterschiedliche Länge und Breite
-2. Ticketschalter
+2. **Ticketschalter**
    - kontrolliert ob Ticket vorhanden
-3. Sicherheitsschleuse
+   - ohne Ticket -> undurchlässig für Agenten
+   - mit Ticket -> durchlässig für Agenten
+3. **Sicherheitsschleuse**
    - kontrolliert ob Gepäck vorhanden
-4. Gepächabgabe
+   - mit Gepäck -> undurchlässig für Agenten
+   - ohne Gepäck -> durchlässig für Agenten 
+4. **Gepächabgabe**
    - Agenten können Gepäck abgeben
 
 ## Architekturmuster
-Die Simulationsumgebung an sich verwendet die Plug-In Architektur.
+Die Simulationsumgebung an sich verwendet die **Plug-In** Architektur.
 ![](./img/PlugInArchitecture.png)
 Demnach stellt die Simulationsgruppe die Schnittstelle `dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin` zur Verfügung die von uns implementiert wurde, sodass unser `ObjectPlugin` in das Gesamtsystem implementiert werden kann. 
 ## Strukturentwurfsmuster
@@ -67,26 +71,32 @@ StaticEntity <|-- Door
 Door <|-- SecurityGate
 Door <|-- TicketCounter
 
-Entity : private World world
-Entity : private int posX
-Entity : private int posY
-Entity : private int width
-Entity : private int height
-Entity : private Plugin plugin
-Entity : isSpawned()
-Entity : getWorld()
-Entity : getPosition()
-Entity : getWidth()
-Entity : getHeight()
-Entity : getPlugin()
-Entity : setPosition(Point pos)
-Entity : setWidth(int width)
-Entity : setHeight(int height)
-Entity : spawn(World world, int posX, int posY, int width, int height)
-Entity : kill()
-Entity : update()
-Entity : pluginUpdate()
+
+
+class Entity{
+  -world : World
+  -posX : int
+  -posY : int
+  -width : int
+  -height : int
+  -plugin : Plugin
+  +isSpawned() bool
+  +getWorld() World
+  +getPosition() Point
+  +getWidth() int
+  +getHeight() int
+  +getPlugin() Plugin
+  +setPosition(pos : Point) void
+  +setWidth(width : int) void
+  +setHeight(height : int) void
+  +spawn(world : World, posX : int, posY : int, width : int, height : int) void
+  +kill() void
+  +update() void
+  +pluginUpdate() void
+}
+
 ```
+
 ### Wände
 ### Ticketschalter
 ### Sicherheitsschleuse
