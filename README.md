@@ -57,6 +57,15 @@ Aufgrund der [User Stories](https://airportagent-objekte.atlassian.net/jira/soft
 Die Simulationsumgebung an sich verwendet die **Plug-In** Architektur.
 ![](./img/PlugInArchitecture.png)
 Demnach stellt die Simulationsgruppe die Schnittstelle `dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin` zur Verfügung die von uns implementiert wurde, sodass unser `ObjectPlugin` in das Gesamtsystem implementiert werden kann. 
+```mermaid
+classDiagram
+Plugin <-- ObjectPlugin : implements
+Plugin Manager o-- Plugin : verwaltet
+class Plugin{
+  <<interface>>
+}
+```
+
 ## Strukturentwurfsmuster
 
 
@@ -70,8 +79,6 @@ StaticEntity <|-- BaggageDropOff
 StaticEntity <|-- Door
 Door <|-- SecurityGate
 Door <|-- TicketCounter
-
-
 
 class Entity{
   -world : World
