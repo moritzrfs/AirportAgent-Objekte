@@ -100,6 +100,8 @@ class Entity{
 
 class Door{
   -isOpen : bool
+  -startHeight : int
+  -startLength : int
   +openDoor() void
   +closeDoor() void
 }
