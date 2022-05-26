@@ -9,10 +9,6 @@ Dies ist das Repo der Objekt-Gruppe des Airport Simulation Projekts :airplane:
   - [Architekturmuster](#architekturmuster)
   - [Strukturentwurfsmuster](#strukturentwurfsmuster)
   - [Objekt-Klassen](#objekt-klassen)
-    - [Wände](#wände)
-    - [Ticketschalter](#ticketschalter)
-    - [Sicherheitsschleuse](#sicherheitsschleuse)
-    - [Gepächabgabe](#gepächabgabe)
 
 ---
 # Projekt-Oragnisation
@@ -102,9 +98,17 @@ class Entity{
   +pluginUpdate() void
 }
 
-```
+class Door{
+  -isOpen : bool
+  +openDoor() void
+  +closeDoor() void
+}
 
-### Wände
-### Ticketschalter
-### Sicherheitsschleuse
-### Gepächabgabe
+class SecurityGate{
+  +checkPackage() bool
+}
+
+class TicketCounter{
+  +checkTicket() bool
+}
+```
