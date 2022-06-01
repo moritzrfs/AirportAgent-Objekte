@@ -114,3 +114,9 @@ class TicketCounter{
   +checkTicket() bool
 }
 ```
+## Airport Configuration
+
+Für den Aufbau des Flughafens werden in `configurationFile.json` alle entitites unter Angabe aller Parameter hinzugefügt.
+
+### Konzeptioneller Aufbau des Fluhafens
+![Aufbau Flughafen](img/airport.drawio.svg)
