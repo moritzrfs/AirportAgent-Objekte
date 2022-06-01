@@ -118,5 +118,8 @@ class TicketCounter{
 
 Für den Aufbau des Flughafens werden in `configurationFile.json` alle entitites unter Angabe aller Parameter hinzugefügt.
 
-### Konzeptioneller Aufbau des Fluhafens
+### Konzeptioneller Aufbau des Flughafens
 ![Aufbau Flughafen](img/airport.drawio.svg)
+
+### Aktivitätsdiagramm für den Ablauf im Flughafen
+![Aktivitätsdiagramm](img/aktivitätsdiagramm_objekte_v1.drawio.drawio.svg)
