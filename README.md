@@ -122,4 +122,4 @@ Für den Aufbau des Flughafens werden in `configurationFile.json` alle entitites
 ![Aufbau Flughafen](img/airport.drawio.svg)
 
 ### Aktivitätsdiagramm für den Ablauf im Flughafen
-![Aktivitätsdiagramm](img/aktivitätsdiagramm_objekte_v1.drawio.drawio.svg)
+![Aktivitätsdiagramm](img/aktivitätsdiagramm_objekte_v1.drawio.png)
