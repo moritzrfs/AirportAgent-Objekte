@@ -8,9 +8,10 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.message.Message;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.message.DirectedMessage;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.message.LocalMessage;
+import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 
 public class TicketCounter extends Door {
-    public TicketCounter(int length, int height, int xPos, int yPos, World world, Plugin plugin, boolean isOpen){
+    public TicketCounter(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
         super(length, height, xPos, yPos, world, plugin, isOpen);
     }
 

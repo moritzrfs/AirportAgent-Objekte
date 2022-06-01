@@ -14,8 +14,8 @@ abstract class Door extends StaticEntity {
     private SimulationWorld world;
     private Plugin plugin;
     private boolean isOpen;
-    private int startLength;
-    private int startHeigth;
+    private final int startLength;
+    private final int startHeigth;
 
     public Door(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
         this.length = length;
