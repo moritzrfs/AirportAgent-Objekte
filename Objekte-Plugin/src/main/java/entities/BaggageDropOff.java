@@ -11,6 +11,7 @@ public class BaggageDropOff extends StaticEntity {
     private int yPos;
     private SimulationWorld world;
     private Plugin plugin;
+    private int counter;
 
     public BaggageDropOff(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin) {
         this.length = length;
@@ -19,6 +20,7 @@ public class BaggageDropOff extends StaticEntity {
         this.yPos = yPos;
         this.world = world;
         this.plugin = plugin;
+        this.counter = 0;
     }
 
 

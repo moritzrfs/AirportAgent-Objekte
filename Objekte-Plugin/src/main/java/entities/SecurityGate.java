@@ -10,9 +10,8 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 
 public class SecurityGate extends Door {
-
     public SecurityGate(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
-        super(length, height, xPos, yPos, world, plugin, isOpen);
+        super(length, height, xPos, yPos, world, plugin, isOpen, 0);
     }
 
     public void pluginUpdate(){
@@ -21,6 +20,9 @@ public class SecurityGate extends Door {
 
     public void receiveMessage(Message m){
         if(m instanceof SecurityGate.SecurityGateCheck){
+
+            // increase counter, if the Agent passes the door (only in workflow direction)
+            this.counter++;
             this.openDoor();
         }
     }

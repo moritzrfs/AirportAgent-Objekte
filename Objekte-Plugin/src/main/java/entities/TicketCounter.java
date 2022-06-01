@@ -11,8 +11,9 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 
 public class TicketCounter extends Door {
+
     public TicketCounter(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
-        super(length, height, xPos, yPos, world, plugin, isOpen);
+        super(length, height, xPos, yPos, world, plugin, isOpen, 0);
     }
 
     public boolean checkTicket(){
@@ -25,6 +26,9 @@ public class TicketCounter extends Door {
 
     public void receiveMessage(Message m){
         if(m instanceof TicketCheck){
+
+            // increase counter, if the Agent passes the door (only in right direction)
+            this.counter++;
             this.openDoor();
         }
     }
