@@ -50,6 +50,11 @@ public class BaggageDropOff extends StaticEntity {
             return new Point(this.xPos, this.yPos);
         }
 
+        @Override
+        public void fromString(String s) {
+
+        }
+
         public int getMaxRange(){
             return 1;
         }
