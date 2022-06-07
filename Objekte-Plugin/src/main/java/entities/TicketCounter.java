@@ -17,9 +17,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.Consumer;
 
-public class TicketCounter extends Door {
+public class TicketCounter extends entities.Door {
 
     ArrayList<Task> tasks;
+    ArrayList<Entity> clients;
+
     public TicketCounter(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
         super(length, height, xPos, yPos, world, plugin, isOpen);
     }
@@ -28,8 +30,23 @@ public class TicketCounter extends Door {
         return true;
     }
 
+    private void getTasks(){
+        this.getWorld().getEntities().forEach(
+                new Consumer<Entity>() {
+                    @Override
+                    public void accept(Entity entity) {
+                        if(entity instanceof Task){
+                            if(((Task) entity).taskIsApplicable(TaskType.PERFORM_TICKET_CHECK)){
+                                tasks.add((Task) entity);
+                            }
+                        }
+                    }
+                });
+    }
+
     public void pluginUpdate(){
         if (this.getWorld().getIteration() == 0){
+            /*
             tasks = new ArrayList<Task>();
             this.getWorld().getEntities().forEach(
                     new Consumer<Entity>() {
@@ -41,10 +58,8 @@ public class TicketCounter extends Door {
                                 }
                             }
                         }
-                    }
-
-            );
-
+                    });*/
+            getTasks();
         }
 
         tasks.forEach(new Consumer<Task>() {
@@ -53,11 +68,20 @@ public class TicketCounter extends Door {
                 getWorld().sendMessage(new TicketCheck(xPos, yPos));
             }
         });
+        clients.forEach(new Consumer<Entity>() {
+            @Override
+            public void accept(Entity entity) {
+                if(entity.getPosition().getX() > xPos && isOpen){
+                    closeDoor();
+                }
+            }
+        });
     }
 
     public void receiveMessage(Message m){
         if(m instanceof TaskMessage){
             this.openDoor();
+            clients.add(((TaskMessage) m).getOrigin());
         }
     }
 
