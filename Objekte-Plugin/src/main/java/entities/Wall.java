@@ -6,7 +6,6 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 import lombok.Data;
 
-@Data
 public class Wall extends StaticEntity {
 
     private int length;
