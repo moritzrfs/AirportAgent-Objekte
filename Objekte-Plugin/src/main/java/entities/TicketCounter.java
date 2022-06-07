@@ -21,6 +21,7 @@ public class TicketCounter extends entities.Door {
 
     ArrayList<Task> tasks;
     ArrayList<Entity> clients;
+    TaskConnector taskConnector;
 
     public TicketCounter(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
         super(length, height, xPos, yPos, world, plugin, isOpen);
@@ -30,36 +31,9 @@ public class TicketCounter extends entities.Door {
         return true;
     }
 
-    private void getTasks(){
-        this.getWorld().getEntities().forEach(
-                new Consumer<Entity>() {
-                    @Override
-                    public void accept(Entity entity) {
-                        if(entity instanceof Task){
-                            if(((Task) entity).taskIsApplicable(TaskType.PERFORM_TICKET_CHECK)){
-                                tasks.add((Task) entity);
-                            }
-                        }
-                    }
-                });
-    }
-
     public void pluginUpdate(){
         if (this.getWorld().getIteration() == 0){
-            /*
-            tasks = new ArrayList<Task>();
-            this.getWorld().getEntities().forEach(
-                    new Consumer<Entity>() {
-                        @Override
-                        public void accept(Entity entity) {
-                            if(entity instanceof Task){
-                                if(((Task) entity).taskIsApplicable(TaskType.PERFORM_TICKET_CHECK)){
-                                    tasks.add((Task) entity);
-                                }
-                            }
-                        }
-                    });*/
-            getTasks();
+            taskConnector.connectTasks(TaskType.PERFORM_TICKET_CHECK);
         }
 
         tasks.forEach(new Consumer<Task>() {

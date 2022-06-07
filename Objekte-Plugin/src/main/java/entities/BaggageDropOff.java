@@ -36,7 +36,7 @@ public class BaggageDropOff extends StaticEntity {
 
     public void pluginUpdate() {
         if (this.getWorld().getIteration() == 0) {
-            taskConnector.connectTasks();
+            taskConnector.connectTasks(TaskType.DROP_LUGGAGE);
         }
     }
 

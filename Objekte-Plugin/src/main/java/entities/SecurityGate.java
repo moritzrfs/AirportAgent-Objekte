@@ -1,6 +1,7 @@
 package entities;
 
 import Plugin.Task.Task;
+import Plugin.Task.TaskType;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.geometry.Point;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.entity.Entity;
@@ -20,7 +21,7 @@ public class SecurityGate extends Door {
 
     public void pluginUpdate() {
         if (this.getWorld().getIteration() == 0) {
-            taskConnector.connectTasks();
+            taskConnector.connectTasks(TaskType.PERFORM_SECURITY_CHECK);
         }
     }
 

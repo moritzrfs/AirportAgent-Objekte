@@ -10,14 +10,14 @@ import java.util.function.Consumer;
 public class TaskConnector extends StaticEntity {
 
     ArrayList<Task> tasks;
-    public void connectTasks(){
+    public void connectTasks(TaskType taskType){
         tasks = new ArrayList<Task>();
         this.getWorld().getEntities().forEach(
                 new Consumer<Entity>() {
                     @Override
                     public void accept(Entity entity) {
                         if(entity instanceof Task){
-                            if(((Task) entity).taskIsApplicable(TaskType.PERFORM_TICKET_CHECK)){
+                            if(((Task) entity).taskIsApplicable(taskType)){
                                 tasks.add((Task) entity);
                             }
                         }
