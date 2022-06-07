@@ -6,7 +6,7 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 import lombok.Data;
 
-abstract class Door extends StaticEntity {
+public class Door extends StaticEntity {
     private int length;
     private int height;
     protected int xPos;
