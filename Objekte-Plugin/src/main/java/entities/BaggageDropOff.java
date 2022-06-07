@@ -1,5 +1,7 @@
 package entities;
 
+import Plugin.Task.Task;
+import Plugin.Task.TaskType;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.geometry.Point;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.entity.Entity;
@@ -8,7 +10,13 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.message.Message;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 
+import java.util.ArrayList;
+import java.util.function.Consumer;
+
 public class BaggageDropOff extends StaticEntity {
+
+    ArrayList<Task> tasks;
+
     private int length;
     private int height;
     private int xPos;
@@ -30,9 +38,30 @@ public class BaggageDropOff extends StaticEntity {
         }
     }
 
-    @Override
     public void pluginUpdate() {
-        getWorld().sendMessage(new BaggageSubmission(this.xPos, this.yPos));
+        if (this.getWorld().getIteration() == 0) {
+            tasks = new ArrayList<Task>();
+            this.getWorld().getEntities().forEach(
+                    new Consumer<Entity>() {
+                        @Override
+                        public void accept(Entity entity) {
+                            if (entity instanceof Task) {
+                                if (((Task) entity).taskIsApplicable(TaskType.PERFORM_SECURITY_CHECK)) {
+                                    tasks.add((Task) entity);
+                                }
+                            }
+                        }
+                    }
+            );
+
+            tasks.forEach(new Consumer<Task>() {
+
+                @Override
+                public void accept(Task task) {
+                    //getWorld().sendMessage(new SecurityGateCheck(xPos, yPos));
+                }
+            });
+        }
     }
 
     private static class BaggageSubmission implements LocalMessage {
