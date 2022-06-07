@@ -10,13 +10,9 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.message.Message;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 
-import java.util.ArrayList;
-import java.util.function.Consumer;
-
 public class BaggageDropOff extends StaticEntity {
 
-    ArrayList<Task> tasks;
-
+    TaskConnector taskConnector;
     private int length;
     private int height;
     private int xPos;
@@ -40,29 +36,11 @@ public class BaggageDropOff extends StaticEntity {
 
     public void pluginUpdate() {
         if (this.getWorld().getIteration() == 0) {
-            tasks = new ArrayList<Task>();
-            this.getWorld().getEntities().forEach(
-                    new Consumer<Entity>() {
-                        @Override
-                        public void accept(Entity entity) {
-                            if (entity instanceof Task) {
-                                if (((Task) entity).taskIsApplicable(TaskType.PERFORM_SECURITY_CHECK)) {
-                                    tasks.add((Task) entity);
-                                }
-                            }
-                        }
-                    }
-            );
-
-            tasks.forEach(new Consumer<Task>() {
-
-                @Override
-                public void accept(Task task) {
-                    //getWorld().sendMessage(new SecurityGateCheck(xPos, yPos));
-                }
-            });
+            taskConnector.connectTasks();
         }
     }
+
+
 
     private static class BaggageSubmission implements LocalMessage {
         int xPos;

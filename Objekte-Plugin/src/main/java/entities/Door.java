@@ -1,10 +1,16 @@
 package entities;
 
+import Plugin.Task.Task;
+import Plugin.Task.TaskType;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.World;
+import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.entity.Entity;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.entity.StaticEntity;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class Door extends StaticEntity {
     private int length;
@@ -13,9 +19,10 @@ public class Door extends StaticEntity {
     protected int yPos;
     private SimulationWorld world;
     private Plugin plugin;
-    private boolean isOpen;
+    protected boolean isOpen;
     private final int startLength;
     private final int startHeigth;
+
 
     public Door(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
         this.length = length;
