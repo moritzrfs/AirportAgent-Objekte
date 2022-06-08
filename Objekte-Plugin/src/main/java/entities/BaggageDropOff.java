@@ -10,6 +10,8 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulati
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.simulation.message.Message;
 import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.SimulationWorld;
 
+import java.util.ArrayList;
+
 public class BaggageDropOff extends StaticEntity {
 
     TaskConnector taskConnector;
@@ -39,7 +41,6 @@ public class BaggageDropOff extends StaticEntity {
             taskConnector.connectTasks(TaskType.DROP_LUGGAGE);
         }
     }
-
 
 
     private static class BaggageSubmission implements LocalMessage {
