@@ -15,9 +15,7 @@ import java.util.function.Consumer;
 public class SecurityGate extends Door {
 
     TaskConnector taskConnector;
-    public SecurityGate(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
-        super(length, height, xPos, yPos, world, plugin, isOpen);
-    }
+
 
     public void pluginUpdate() {
         if (this.getWorld().getIteration() == 0) {

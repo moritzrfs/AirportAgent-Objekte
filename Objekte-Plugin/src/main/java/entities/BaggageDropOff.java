@@ -15,21 +15,6 @@ import java.util.ArrayList;
 public class BaggageDropOff extends StaticEntity {
 
     TaskConnector taskConnector;
-    private int length;
-    private int height;
-    private int xPos;
-    private int yPos;
-    private SimulationWorld world;
-    private Plugin plugin;
-
-    public BaggageDropOff(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin) {
-        this.length = length;
-        this.height = height;
-        this.xPos = xPos;
-        this.yPos = yPos;
-        this.world = world;
-        this.plugin = plugin;
-    }
 
     public void receiveMessage(Message m){
         if(m instanceof BaggageSubmission){

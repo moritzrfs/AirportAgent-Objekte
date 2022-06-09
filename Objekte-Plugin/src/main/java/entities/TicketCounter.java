@@ -23,10 +23,6 @@ public class TicketCounter extends entities.Door {
     ArrayList<Entity> clients;
     TaskConnector taskConnector;
 
-    public TicketCounter(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
-        super(length, height, xPos, yPos, world, plugin, isOpen);
-    }
-
     public boolean checkTicket(){
         return true;
     }

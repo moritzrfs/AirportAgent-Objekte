@@ -13,42 +13,21 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class Door extends StaticEntity {
-    private int length;
-    private int height;
-    protected int xPos;
-    protected int yPos;
-    private SimulationWorld world;
-    private Plugin plugin;
-    protected boolean isOpen;
-    private final int startLength;
-    private final int startHeigth;
 
+    protected boolean isOpen = false;
 
-    public Door(int length, int height, int xPos, int yPos, SimulationWorld world, Plugin plugin, boolean isOpen){
-        this.length = length;
-        this.height = height;
-        this.xPos = xPos;
-        this.yPos = yPos;
-        this.world = world;
-        this.plugin = plugin;
-        this.isOpen = isOpen;
-        this.startHeigth = height;
-        this.startLength = length;
-    }
 
     public void openDoor(){
         if(this.isOpen){
             return;
         }else{
-        this.length = 0;
-        this.height = 0;
+        setSolid(false);
         this.isOpen = true;}
     }
 
     public void closeDoor(){
         if(this.isOpen){
-            this.length = this.startLength;
-            this.height = this.startHeigth;
+            setSolid(true);
             this.isOpen = false;
         }else return;  
     }
