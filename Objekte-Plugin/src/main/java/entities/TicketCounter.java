@@ -35,7 +35,7 @@ public class TicketCounter extends entities.Door {
         tasks.forEach(new Consumer<Task>() {
             @Override
             public void accept(Task task) {
-                getWorld().sendMessage(new TicketCheck(xPos, yPos));
+                getWorld().sendMessage(new TicketCheck(getPosition().getX(), getPosition().getX()));
             }
         });
         clients.forEach(new Consumer<Entity>() {
