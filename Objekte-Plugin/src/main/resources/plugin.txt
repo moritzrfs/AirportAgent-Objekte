@@ -1,0 +1,6 @@
+id: 5
+name: objekte
+authors: Steven,Dario,Moritz,David,Niclas,Luka,Yannic,Hendrik
+entrypoint: ObjectPlugin
+dependencies: airportargentsim,SE2-Civilian
+

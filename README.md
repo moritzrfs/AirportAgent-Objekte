@@ -9,10 +9,6 @@ Dies ist das Repo der Objekt-Gruppe des Airport Simulation Projekts :airplane:
   - [Architekturmuster](#architekturmuster)
   - [Strukturentwurfsmuster](#strukturentwurfsmuster)
   - [Objekt-Klassen](#objekt-klassen)
-    - [Wände](#wände)
-    - [Ticketschalter](#ticketschalter)
-    - [Sicherheitsschleuse](#sicherheitsschleuse)
-    - [Gepächabgabe](#gepächabgabe)
 
 ---
 # Projekt-Oragnisation
@@ -102,9 +98,28 @@ class Entity{
   +pluginUpdate() void
 }
 
-```
+class Door{
+  -isOpen : bool
+  -startHeight : int
+  -startLength : int
+  +openDoor() void
+  +closeDoor() void
+}
 
-### Wände
-### Ticketschalter
-### Sicherheitsschleuse
-### Gepächabgabe
+class SecurityGate{
+  +checkPackage() bool
+}
+
+class TicketCounter{
+  +checkTicket() bool
+}
+```
+## Airport Configuration
+
+Für den Aufbau des Flughafens werden in `configurationFile.json` alle entitites unter Angabe aller Parameter hinzugefügt.
+
+### Konzeptioneller Aufbau des Flughafens
+![Aufbau Flughafen](img/airport.drawio.svg)
+
+### Aktivitätsdiagramm für den Ablauf im Flughafen
+![Aktivitätsdiagramm](img/aktivitätsdiagramm_objekte_v1.drawio.png)

@@ -1,0 +1,331 @@
+{
+    "seed": 0,
+    "width": 800,
+    "height": 500,
+    "placedEntities": [
+        {
+            "type": "entrance",
+            "position": [
+                0,
+                200
+            ],
+            "width": 100,
+            "height": 100,
+            "generates": [
+                {
+                    "type": "passenger",
+                    "generationRate": 258
+                }
+            ],
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                0,
+                0
+            ],
+            "generates": [],
+            "width": 1,
+            "height": 300,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                0,
+                0
+            ],
+            "generates": [],
+            "width": 800,
+            "height": 1,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                799,
+                0
+            ],
+            "generates": [],
+            "width": 1,
+            "height": 500,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                0,
+                499
+            ],
+            "generates": [],
+            "width": 800,
+            "height": 1,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "baggageDropOff",
+            "position": [
+                180,
+                80
+            ],
+            "generates": [],
+            "width": 50,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "baggageDropOff",
+            "position": [
+                180,
+                225
+            ],
+            "generates": [],
+            "width": 50,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "baggageDropOff",
+            "position": [
+                180,
+                370
+            ],
+            "generates": [],
+            "width": 50,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                330,
+                0
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 80,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                330,
+                130
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 95,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                330,
+                275
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 95,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                330,
+                420
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 80,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "ticketCounter",
+            "position": [
+                330,
+                80
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "ticketCounter",
+            "position": [
+                330,
+                225
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "ticketCounter",
+            "position": [
+                330,
+                370
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                510,
+                0
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 80,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                510,
+                130
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 95,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                510,
+                275
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 95,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                510,
+                420
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 80,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "securityGate",
+            "position": [
+                510,
+                80
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "securityGate",
+            "position": [
+                510,
+                225
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "securityGate",
+            "position": [
+                510,
+                370
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                690,
+                0
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 80,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                690,
+                130
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 95,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                690,
+                275
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 95,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "wall",
+            "position": [
+                690,
+                420
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 80,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "ticketCounter",
+            "position": [
+                690,
+                80
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "ticketCounter",
+            "position": [
+                690,
+                225
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        },
+        {
+            "type": "ticketCounter",
+            "position": [
+                690,
+                370
+            ],
+            "generates": [],
+            "width": 10,
+            "height": 50,
+            "pluginAttributes": {}
+        }
+    ]
+}
